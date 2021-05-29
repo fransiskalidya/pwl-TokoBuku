@@ -320,7 +320,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         	<i class="tf-ion-android-checkmark-circle"></i>
           <h2 class="text-center">Thank you! For your payment</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, sed.</p>
-          <a href="shop.html" class="btn btn-main mt-20">Continue Shopping</a>
+          <a href="{{ url('/shop') }}" class="btn btn-main mt-20">Continue Shopping</a>
         </div>
       </div>
     </div>
@@ -355,16 +355,16 @@ FACEBOOK: https://www.facebook.com/themefisher
 				</ul>
 				<ul class="footer-menu text-uppercase">
 					<li>
-						<a href="contact.html">CONTACT</a>
+						<a href="{{ url('/contact') }}">CONTACT</a>
 					</li>
 					<li>
-						<a href="shop.html">SHOP</a>
+						<a href="{{ url('/shop') }}">SHOP</a>
 					</li>
 					<li>
-						<a href="pricing.html">Pricing</a>
+						<a href="{{ url('/pricing') }}">Pricing</a>
 					</li>
 					<li>
-						<a href="contact.html">PRIVACY POLICY</a>
+						<a href="{{ url('/contact') }}">PRIVACY POLICY</a>
 					</li>
 				</ul>
 				<p class="copyright-text">Copyright &copy;2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a></p>
