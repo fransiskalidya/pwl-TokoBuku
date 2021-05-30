@@ -1,4 +1,4 @@
-<!-- 
+<!--
 THEME: Aviato | E-commerce template
 VERSION: 1.0.0
 AUTHOR: Themefisher
@@ -29,21 +29,21 @@ FACEBOOK: https://www.facebook.com/themefisher
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
-  
+
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  
+
   <!-- Themefisher Icon font -->
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  
+
   <!-- Animate css -->
   <link rel="stylesheet" href="plugins/animate/animate.css">
   <!-- Slick Carousel -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -56,12 +56,13 @@ FACEBOOK: https://www.facebook.com/themefisher
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
-          <a class="logo" href="i{{ url('/') }}">
+          <a class="logo" href="{{ __('Register') }}">
             <img src="images/logo.png" alt="">
           </a>
           <h2 class="text-center">Create Your Account</h2>
-          <form class="text-left clearfix" action="{{ url('/') }}">
-          <div class="form-group row">
+          <form class="text-left clearfix" method="POST" action="{{ route('register') }}">
+            @csrf
+            <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -115,18 +116,18 @@ FACEBOOK: https://www.facebook.com/themefisher
               <button type="submit" class="btn btn-main text-center">Sign In</button>
             </div>
           </form>
-          <p class="mt-20">Already hava an account ?<a href="{{ url('/login') }}"> Login</a></p>
-          <p><a href="{{url('/forget-password') }}"> Forgot your password?</a></p>
+          <p class="mt-20">Already hava an account ?<a href="{{ route('login') }}"> Login</a></p>
+          {{-- <p><a href="{{url('/forget-password') }}"> Forgot your password?</a></p> --}}
         </div>
       </div>
     </div>
   </div>
 </section>
 
-    <!-- 
+    <!--
     Essential Scripts
     =====================================-->
-    
+
     <!-- Main jQuery -->
     <script src="plugins/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.1 -->
@@ -150,7 +151,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 
     <!-- Main Js File -->
     <script src="js/script.js"></script>
-    
+
 
 
   </body>

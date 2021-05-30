@@ -1,4 +1,4 @@
-<!-- 
+<!--
 THEME: Aviato | E-commerce template
 VERSION: 1.0.0
 AUTHOR: Themefisher
@@ -29,21 +29,21 @@ FACEBOOK: https://www.facebook.com/themefisher
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
-  
+
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  
+
   <!-- Themefisher Icon font -->
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  
+
   <!-- Animate css -->
   <link rel="stylesheet" href="plugins/animate/animate.css">
   <!-- Slick Carousel -->
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -56,33 +56,63 @@ FACEBOOK: https://www.facebook.com/themefisher
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
-          <a class="logo" href="{{ url('/') }}">
+          <a class="logo" href="{{ __('Login') }}">
             <img src="images/logo.png" alt="">
           </a>
           <h2 class="text-center">Welcome Back</h2>
-          <form class="text-left clearfix" action="{{ url('/') }}" >
+          <form class="text-left clearfix" method="POST" action="{{ route('login') }}" >
+            @csrf
             <div class="form-group">
-              <input type="email" class="form-control"  placeholder="Email">
+                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                <div class="col-md-6">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
+                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                <div class="col-md-6">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-main text-center" >Login</button>
+            <div class="form-group">
+                <div class="col-md-6 offset-md-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                        <label class="form-check-label" for="remember">
+                            {{ __('Remember Me') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+              <button type="submit" class="btn btn-main text-center" >{{ __('Login') }}</button>
             </div>
           </form>
           <p class="mt-20">New in this site ?<a href="{{route('register') }}"> Create New Account</a></p>
-          <p class="mt-20"><a href="{{url('/forget-password') }}"> Forgot Your Password?</a></p>
+          {{-- <p class="mt-20"><a href="{{url('/forget-password') }}"> Forgot Your Password?</a></p> --}}
         </div>
       </div>
     </div>
   </div>
 </section>
 
-    <!-- 
+    <!--
     Essential Scripts
     =====================================-->
-    
+
     <!-- Main jQuery -->
     <script src="plugins/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.1 -->
@@ -106,7 +136,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 
     <!-- Main Js File -->
     <script src="js/script.js"></script>
-    
+
 
 
   </body>
