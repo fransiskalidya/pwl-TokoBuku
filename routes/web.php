@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,33 +19,26 @@ use App\Http\Controllers\HomeController;
     return view('welcome');
 });*/
 
+Route::get('/', function () {
+    return view('index');
+});
+
+//Route::get('/', [HomeController::class, 'index']);
+//Route::get('/login', [HomeController::class, 'login']);
+
+
+Route::get('/signin', [BukuController::class, 'signin']);
+
+
+Route::get('/cart', [BukuController::class, 'cart']);
+Route::get('/checkout', [BukuController::class, 'checkout']);
+Route::get('/shop', [BukuController::class, 'shop']);
+
+Route::get('/product-single', [BukuController::class, 'productSingle']);
+
+Route::get('/shop-sidebar', [BukuController::class, 'shopSidebar']);
+Route::get('/contact', [BukuController::class, 'contact']);
+Route::get('/about', [BukuController::class, 'about']);
+
+
 Auth::routes();
-
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/login', [HomeController::class, 'login']);
-Route::get('/signin', [HomeController::class, 'signin']);
-Route::get('/forget-password', [HomeController::class, 'forgetPassword']);
-
-
-Route::get('/cart', [HomeController::class, 'cart']);
-Route::get('/checkout', [HomeController::class, 'checkout']);
-Route::get('/shop', [HomeController::class, 'shop']);
-
-Route::get('/pricing', [HomeController::class, 'pricing']);
-Route::get('/confirmation', [HomeController::class, 'confirmation']);
-Route::get('/product-single', [HomeController::class, 'productSingle']);
-
-Route::get('/shop-sidebar', [HomeController::class, 'shopSidebar']);
-Route::get('/contact', [HomeController::class, 'contact']);
-Route::get('/about', [HomeController::class, 'about']);
-
-Route::get('/404', [HomeController::class, 'notFound']);
-Route::get('/coming-soon', [HomeController::class, 'comingSoon']);
-Route::get('/FAQ', [HomeController::class, 'faq']);
-
-Route::get('/dashboard', [HomeController::class, 'dashboard']);
-Route::get('/order', [HomeController::class, 'order']);
-Route::get('/address', [HomeController::class, 'address']);
-Route::get('/profile-details', [HomeController::class, 'profileDetails']);
-
-
