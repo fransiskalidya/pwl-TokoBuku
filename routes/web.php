@@ -47,3 +47,4 @@ Route::get('/order', [HomeController::class, 'order']);
 Route::get('/address', [HomeController::class, 'address']);
 Route::get('/profile-details', [HomeController::class, 'profileDetails']);
 
+
