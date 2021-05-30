@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BukuController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ use App\Http\Controllers\BukuController;
 
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/konfirm', function () {
+    return view('purchase-confirmation');
 });
 
 //Route::get('/', [HomeController::class, 'index']);
