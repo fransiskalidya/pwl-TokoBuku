@@ -183,8 +183,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 					<li class="dropdown ">
 						<a href="{{ url('/') }}">Home</a>
 					</li><!-- / Home -->
-
-
+					
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
@@ -276,36 +275,6 @@ FACEBOOK: https://www.facebook.com/themefisher
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Pages -->
-
-
-
-					<!-- Blog -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="{{ url('/blog-left-sidebar') }}">Blog Left Sidebar</a></li>
-							<li><a href="{{ url('/blog-right-sidebar') }}">Blog Right Sidebar</a></li>
-							<li><a href="{{ url('/blog-full-width') }}">Blog Full Width</a></li>
-							<li><a href="{{ url('/blog-grid') }}">Blog 2 Columns</a></li>
-							<li><a href="{{ url('/blog-single') }}">Blog Single</a></li>
-						</ul>
-					</li><!-- / Blog -->
-
-					<!-- Shop -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="{{ url('/typography') }}">Typography</a></li>
-							<li><a href="{{ url('/buttons') }}">Buttons</a></li>
-							<li><a href="{{ url('/alerts') }}">Alerts</a></li>
-						</ul>
-					</li><!-- / Blog -->
-				</ul><!-- / .nav .navbar-nav -->
-
 			</div>
 			<!--/.navbar-collapse -->                         
 		</div><!-- / .container -->
