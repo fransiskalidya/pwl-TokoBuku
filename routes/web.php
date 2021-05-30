@@ -47,15 +47,3 @@ Route::get('/order', [HomeController::class, 'order']);
 Route::get('/address', [HomeController::class, 'address']);
 Route::get('/profile-details', [HomeController::class, 'profileDetails']);
 
-Route::get('/blog-left-sidebar', [HomeController::class, 'blogLeftSidebar']);
-Route::get('/blog-right-sidebar', [HomeController::class, 'blogRightSidebar']);
-Route::get('/blog-full-width', [HomeController::class, 'blogFullWidth']);
-
-Route::get('/blog-grid', [HomeController::class, 'blogGrid']);
-Route::get('/blog-single', [HomeController::class, 'blogSingle']);
-Route::get('/typography', [HomeController::class, 'typography']);
-
-Route::get('/buttons', [HomeController::class, 'buttons']);
-Route::get('/alerts', [HomeController::class, 'alerts']);
-
-
