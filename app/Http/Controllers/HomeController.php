@@ -116,46 +116,6 @@ class HomeController extends Controller
         return view('forgetPassword');
     }
 
-    public function blogLeftSidebar()
-    {
-        return view('blogLeftSidebar');
-    }
-
-    public function blogRightSidebar()
-    {
-        return view('blogRightSidebar');
-    }
-
-    public function blogFullWidth()
-    {
-        return view('blogFullWidth');
-    }
-
-    public function blogGrid()
-    {
-        return view('blogGrid');
-    }
-
-    public function blogSingle()
-    {
-        return view('blogSingle');
-    }
-
-    public function typography()
-    {
-        return view('typography');
-    }
-
-    public function buttons()
-    {
-        return view('buttons');
-    }
-
-    public function alerts()
-    {
-        return view('alerts');
-    }
-
     public function dashboard()
     {
         return view('dashboard');
