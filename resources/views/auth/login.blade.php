@@ -57,12 +57,13 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
           <a class="logo" href="{{ __('Login') }}">
-            <img src="images/logo.png" alt="">
+            <!--<img src="images/logo.png" alt="">-->
+            <h1 class="text-center">ERFOLG</h1>
+            <h2 class="text-center">Welcome Back</h2>
           </a>
-          <h2 class="text-center">Welcome Back</h2>
           <form class="text-left clearfix" method="POST" action="{{ route('login') }}" >
             @csrf
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                 <div class="col-md-6">
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -74,7 +75,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                     @enderror
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                 <div class="col-md-6">
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">

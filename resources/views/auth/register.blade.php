@@ -57,9 +57,9 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
           <a class="logo" href="{{ __('Register') }}">
-            <img src="images/logo.png" alt="">
+            <h1 class="text-center">ERFOLG</h1>
+            <h2 class="text-center">Create Your Account</h2>
           </a>
-          <h2 class="text-center">Create Your Account</h2>
           <form class="text-left clearfix" method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group row">

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function cart()
     {
@@ -71,5 +75,10 @@ class BukuController extends Controller
     public function order()
     {
         return view('order');
+    }
+
+    public function profile()
+    {
+        return view('profile');
     }
 }
