@@ -10,7 +10,7 @@ class BukuController extends Controller
     {
         $this->middleware('auth');
     }
-
+    
     public function cart()
     {
         return view('cart');
