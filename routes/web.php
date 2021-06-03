@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 Route::get('/', function () {
     return view('index');
@@ -29,6 +29,10 @@ Route::get('/', function () {
 Route::get('/konfirm', function () {
     return view('purchase-confirmation');
 });
+
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
 
 //Route::get('/', [HomeController::class, 'index']);
 //Route::get('/login', [HomeController::class, 'login']);
@@ -40,16 +44,16 @@ Route::get('/signin', [BukuController::class, 'signin']);
 
 Route::get('/cart', [BukuController::class, 'cart']);
 Route::get('/checkout', [BukuController::class, 'checkout']);
-Route::get('/shop', [BukuController::class, 'shop']);
+Route::get('/home', [BukuController::class, 'shop']);
 
-Route::get('/product-single', [BukuController::class, 'productSingle']);
+Route::get('/product-single/{id}', [HomeController::class, 'show']);
 
 Route::get('/shop-sidebar', [BukuController::class, 'shopSidebar']);
 Route::get('/contact', [BukuController::class, 'contact']);
 Route::get('/about', [BukuController::class, 'about']);
 
-//Route::get('/profile', [BukuController::class, 'profile']);
-
 Route::resource('profile', UserController::class);
+
+// Route::resource('profile', UserController::class);
 
 Auth::routes();

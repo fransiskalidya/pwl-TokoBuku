@@ -98,11 +98,11 @@ FACEBOOK: https://www.facebook.com/themefisher
 			</div>
 			<div class="col-md-7">
 				<div class="single-product-details">
-					<h2>Eclipse Crossbody</h2>
-					<p class="product-price">$300</p>
+					<h2>{{$buku->nama_buku}}</h2>
+					<p class="product-price">{{$buku->harga}}</p>
 
 					<p class="product-description mt-20">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ipsum dicta quod, quia doloremque aut deserunt commodi quis. Totam a consequatur beatae nostrum, earum consequuntur? Eveniet consequatur ipsum dicta recusandae.
+						{{$buku->keterangan}}
 					</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, velit, sunt temporibus, nulla accusamus similique sapiente tempora, at atque cumque assumenda minus asperiores est esse sequi dolore magnam. Debitis, explicabo.</p>
 					<div class="color-swatches">

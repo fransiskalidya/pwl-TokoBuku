@@ -95,11 +95,50 @@
 							role="button" aria-haspopup="true" aria-expanded="false"><i
 								class="tf-ion-ios-contact"></i> Account</a>
 						<ul class="dropdown-menu">
-							<li><a href="{{route('login') }}">Login Page</a></li>
-							<li><a href="{{route('register') }}">Signin Page</a></li>
+                            @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="dropdown-menu">
+                                {{-- <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a> --}}
+
+                                <div class="nav-item">
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                                <div class="nav-item">
+                                    <a class="nav-link" href="{{url('profile')}}">
+                                        Profile
+                                    </a>
+
+                                </div>
+                            </li>
+                        @endguest
+
+
+							{{-- <li><a href="{{route('login') }}">Login Page</a></li>
+							<li><a href="{{route('register') }}">Signin Page</a></li> --}}
 						</ul>
 					</li><!-- / Account -->
-					
+
 				</ul><!-- / .nav .navbar-nav .navbar-right -->
 			</div>
 		</div>
@@ -193,7 +232,7 @@
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Pages -->
 			</div>
-			<!--/.navbar-collapse -->                         
+			<!--/.navbar-collapse -->
 		</div><!-- / .container -->
 	</nav>
 </section>

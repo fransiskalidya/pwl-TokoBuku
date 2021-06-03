@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Buku;
 
 use Illuminate\Http\Request;
@@ -20,9 +21,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $buku=Buku::all();
+        $buku = Buku::all();
         return view('index', compact('buku'));
     }
+    public function show($id)
+    {
+        $buku = Buku::find($id);
+        return view('productSingle', compact('buku'));
+    }
 }
-
-   

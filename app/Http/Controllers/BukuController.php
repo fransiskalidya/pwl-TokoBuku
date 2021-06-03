@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buku;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -10,7 +11,7 @@ class BukuController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function cart()
     {
         return view('cart');
@@ -20,10 +21,11 @@ class BukuController extends Controller
     {
         return view('checkout');
     }
-*/
+     */
     public function shop()
     {
-        return view('shop');
+        $buku = Buku::all();
+        return view('home', compact('buku'));
     }
 
     public function checkout()
@@ -51,7 +53,7 @@ class BukuController extends Controller
     {
         return view('contact');
     }
-*/
+     */
     public function about()
     {
         return view('about');
@@ -71,7 +73,7 @@ class BukuController extends Controller
     {
         return view('forgetPassword');
     }
-*/
+     */
     public function order()
     {
         return view('order');

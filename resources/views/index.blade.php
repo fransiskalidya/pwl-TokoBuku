@@ -1,4 +1,4 @@
-<!-- 
+<!--
 THEME: Aviato | E-commerce template
 VERSION: 1.0.0
 AUTHOR: Themefisher
@@ -20,7 +20,7 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="row">
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of mind <br> is hidden in details.</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/shop') }}">Shop Now</a>
         </div>
       </div>
@@ -65,7 +65,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 						<div class="content">
 							<h3 style="color:white">Novel</h3>
 						</div>
-					</a>	
+					</a>
 				</div>
 				<div class="category-box">
 					<a href="#!">
@@ -73,7 +73,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 						<div class="content">
 							<h3 style="color:white">Pengembangan Diri</h3>
 						</div>
-					</a>	
+					</a>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -83,7 +83,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 						<div class="content">
 							<h3 style="color:white">Komik</h3>
 						</div>
-					</a>	
+					</a>
 				</div>
 			</div>
 		</div>
@@ -98,7 +98,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			</div>
 		</div>
 		<div class="row">
-			
+
 			@foreach($buku as $Buku)
 			<div class="col-md-4">
 				<div class="product-item">
@@ -122,7 +122,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">{{$Buku->nama_buku}}</a></h4>
+						<h4><a href="#">{{$Buku->nama_buku}}</a></h4>
 						<p class="price">{{$Buku->harga}}</p>
 					</div>
 				</div>
