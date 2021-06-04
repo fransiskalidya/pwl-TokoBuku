@@ -16,7 +16,10 @@ class BukuController extends Controller
     {
         return view('cart');
     }
-
+    public function showKategori()
+    {
+        //
+    }
     /**public function checkout()
     {
         return view('checkout');

@@ -84,7 +84,7 @@
 								class="tf-ion-ios-search-strong"></i> Search</a>
 						<ul class="dropdown-menu search-dropdown">
 							<li>
-								<form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
+								<form action="{{url('index')}}"><input name="search" type="search" class="form-control" placeholder="Search..."></form>
 							</li>
 						</ul>
 					</li><!-- / Search -->
@@ -184,7 +184,7 @@
 									<ul>
 										<li class="dropdown-header">Pages</li>
 										<li role="separator" class="divider"></li>
-										<li><a href="{{ url('/shop') }}">Shop</a></li>
+										<li><a href="{{ url('/home') }}">Shop</a></li>
 									</ul>
 								</div>
 

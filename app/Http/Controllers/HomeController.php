@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buku;
-
+use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -19,14 +20,27 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $buku = Buku::all();
-        return view('index', compact('buku'));
+        // $buku = Buku::where('id_kategori', 1)->get();
+        $cari = $request->get('search');
+        if ($cari) {
+            $buku = Buku::where("nama_buku", "LIKE", "%$cari%");
+            $kategori = Kategori::all();
+        } else {
+            $buku = Buku::paginate(12);
+            $kategori = Kategori::all();
+        }
+        return view('index', compact('buku', 'kategori'));
     }
     public function show($id)
     {
-        $buku = Buku::find($id);
-        return view('productSingle', compact('buku'));
+        // berdasarkan kategori
+        $buku = DB::table('buku')->where('id_kategori', $id)->get();
+        $kategori = Kategori::all();
+        return view('shopSidebar', compact('buku', 'kategori'));
+
+        // $buku = Buku::find($id);
+        // return view('productSingle', compact('buku'));
     }
 }

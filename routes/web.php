@@ -46,13 +46,16 @@ Route::get('/cart', [BukuController::class, 'cart']);
 Route::get('/checkout', [BukuController::class, 'checkout']);
 Route::get('/home', [BukuController::class, 'shop']);
 
-Route::get('/product-single/{id}', [HomeController::class, 'show']);
+// Route::get('/product-single/{id}', [HomeController::class, 'show']);
 
 Route::get('/shop-sidebar', [BukuController::class, 'shopSidebar']);
 Route::get('/contact', [BukuController::class, 'contact']);
 Route::get('/about', [BukuController::class, 'about']);
 
 Route::resource('profile', UserController::class);
+Route::get('/kategori/{id}', [HomeController::class, 'show']);
+
+
 
 // Route::resource('profile', UserController::class);
 

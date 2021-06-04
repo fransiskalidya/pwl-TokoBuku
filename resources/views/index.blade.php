@@ -21,7 +21,7 @@ FACEBOOK: https://www.facebook.com/themefisher
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
           <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of mind <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/shop') }}">Shop Now</a>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('home') }}">Shop Now</a>
         </div>
       </div>
     </div>
@@ -58,34 +58,19 @@ FACEBOOK: https://www.facebook.com/themefisher
 					<h2>Product Category</h2>
 				</div>
 			</div>
-			<div class="col-md-6">
+            @foreach ($kategori as $kategori )
+            <div class="col-md-6">
 				<div class="category-box">
-					<a href="#!">
+					<a href="{{url('kategori', $kategori->id)}}">
 						<img src="images/shop/category/category-1.jpg" style="filter:brightness(50%)" alt="" />
 						<div class="content">
-							<h3 style="color:white">Novel</h3>
-						</div>
-					</a>
-				</div>
-				<div class="category-box">
-					<a href="#!">
-						<img src="images/shop/category/category-2.jpg" style="filter:brightness(50%)" alt="" />
-						<div class="content">
-							<h3 style="color:white">Pengembangan Diri</h3>
+							<h3 style="color:white">{{$kategori->nama_kategori}}</h3>
 						</div>
 					</a>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="category-box category-box-2">
-					<a href="#!">
-						<img src="images/shop/category/category-3.jpg" style="filter:brightness(50%)" alt="" />
-						<div class="content">
-							<h3 style="color:white">Komik</h3>
-						</div>
-					</a>
-				</div>
-			</div>
+            @endforeach
+
 		</div>
 	</div>
 </section>
@@ -116,7 +101,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
 								</li>
 								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
+									<a href="{{ url('/cart') }}"><i class="tf-ion-android-cart"></i></a>
 								</li>
 							</ul>
                       	</div>
@@ -189,20 +174,5 @@ Start Call To Action
 		</div> 		<!-- End row -->
 	</div>   	<!-- End container -->
 </section>   <!-- End section -->
-
-<section class="section instagram-feed">
-	<div class="container">
-		<div class="row">
-			<div class="title">
-				<h2>View us on instagram</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="instagram-slider" id="instafeed" data-accessToken="IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"></div>
-			</div>
-		</div>
-	</div>
-</section>
 
 @endsection

@@ -27,18 +27,17 @@
                   <form class="checkout-form" action="/profile/{{$user->id}}" method="POST" enctype="multipart/form-data">
                   @method('PUT')
                     @csrf
-
                      <div class="form-group">
-                        <label for="nama">{{$user->name}}</label>
-                        <input name="nama" type="text" class="form-control" id="nama" placeholder="">
+                        <label for="nama"></label>
+                        <input name="nama" type="text" class="form-control" id="nama" placeholder="" value="{{$user->name}}">
                      </div>
                      <div class="form-group">
-                        <label for="email">{{$user->email}}</label>
-                        <input name="email" type="text" class="form-control" id="email" placeholder="">
+                        <label for="email"></label>
+                        <input name="email" type="text" class="form-control" id="email" placeholder="" value="{{$user->email}}">
                      </div>
                      <div class="form-group" >
-                        <label for="image">{{$user->image}}</label>
-                        <input name="image" type="file" class="form-control" id="image" value="">
+                        <label for="image"></label>
+                        <input name="image" type="file" class="form-control" id="image" value="{{$user->image}}">
                      </div>
                      <button class="btn btn-main mt-20 offset-mx-4" type="submit" name="submit">Submit</button>
                   </form>
