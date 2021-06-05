@@ -62,19 +62,19 @@ FACEBOOK: https://www.facebook.com/themefisher
 					<ul class="contact-short-info" >
 						<li>
 							<i class="tf-ion-ios-home"></i>
-							<span>Khaja Road, Bayzid, Chittagong, Bangladesh</span>
+							<span>Jalan Soekarno Hatta No.9, Malang</span>
 						</li>
 						<li>
 							<i class="tf-ion-android-phone-portrait"></i>
-							<span>Phone: +880-31-000-000</span>
+							<span>Phone: +62-859-776-554-325</span>
 						</li>
 						<li>
 							<i class="tf-ion-android-globe"></i>
-							<span>Fax: +880-31-000-000</span>
+							<span>Fax: +62-21-386-23567</span>
 						</li>
 						<li>
 							<i class="tf-ion-android-mail"></i>
-							<span>Email: hello@example.com</span>
+							<span>Email: erfolgstore@gmail.com</span>
 						</li>
 					</ul>
 					<!-- Footer Social Links -->

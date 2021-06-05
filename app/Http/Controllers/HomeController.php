@@ -23,9 +23,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         // $buku = Buku::where('id_kategori', 1)->get();
-        $cari = $request->get('search');
-        if ($cari) {
-            $buku = Buku::where("nama_buku", "LIKE", "%$cari%");
+        if ($request->has('search')) {
+            $buku = Buku::where("nama_buku", "LIKE", "%".$request->search."%");
             $kategori = Kategori::all();
         } else {
             $buku = Buku::paginate(12);

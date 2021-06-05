@@ -20,7 +20,7 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="row">
         <div class="col-lg-8 text-center">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of mind <br> is hidden in details.</h1>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Various Novel <br> is hidden in details.</h1>
           <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('home') }}">Shop Now</a>
         </div>
       </div>
@@ -31,8 +31,8 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="row">
         <div class="col-lg-8 text-left">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/shop') }}">Shop Now</a>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Various Self-improvment Books<br> is hidden in details.</h1>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/home') }}">Shop Now</a>
         </div>
       </div>
     </div>
@@ -42,8 +42,8 @@ FACEBOOK: https://www.facebook.com/themefisher
       <div class="row">
         <div class="col-lg-8 text-right">
           <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/shop') }}">Shop Now</a>
+          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Various Comics<br> is hidden in details.</h1>
+          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="{{ url('/home') }}">Shop Now</a>
         </div>
       </div>
     </div>
