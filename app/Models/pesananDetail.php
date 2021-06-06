@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class pesananDetail extends Model
 {
     use HasFactory;
-    protected $table = 'pesananDetail';
+    protected $table = 'pesanan_details';
     
     public function buku() {
-        return $this->belongsTo(Buku::class);
+        return $this->belongsTo('App\Models\Buku','id_buku', 'id');
     }
 
     public function pesanan() {
-        return $this->belongsTo(Pesanan::class);
+        return $this->belongsTo('App\Models\Pesanan','id_pesanan', 'id');
     }
 }
 

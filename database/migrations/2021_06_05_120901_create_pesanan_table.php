@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesananDetailTable extends Migration
+class CreatePesananTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePesananDetailTable extends Migration
      */
     public function up()
     {
-        Schema::create('pesanan_detail', function (Blueprint $table) {
+        Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_buku');
-            $table->unsignedBigInteger('id_pesanan');
-            $table->integer('jumlah');
-            $table->integer('subtotal');
+            $table->unsignedBigInteger('id_user');
+            $table->date('tanggal');
+            $table->string('status');
+            $table->integer('total');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePesananDetailTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesanan_detail');
+        Schema::dropIfExists('pesanan');
     }
 }

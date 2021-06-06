@@ -2,28 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-
-class UserController extends Controller
+use App\Models\Buku;
+use App\Models\Kategori;
+class Buku1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
+    public function index(Request $request)
     {
-        $this->middleware('auth');
-    }
-
-    public function index()
-    {
-        $user = User::where('id', Auth::user()->id)->first();
-        return view('profile', compact('user'));
+        // $buku = Buku::where('id_kategori', 1)->get();
+        $search = $request->get('search');
+        if ($search) {
+            $buku = Buku::where("nama_buku", "LIKE", "%$search%")->get();
+            $kategori = Kategori::all();
+        } else {
+            $buku = Buku::paginate(12);
+            $kategori = Kategori::all();
+        }
+        return view('index', compact('buku', 'kategori'));
     }
 
     /**
@@ -55,7 +55,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        // berdasarkan kategori
+        $buku = DB::table('buku')->where('id_kategori', $id)->get();
+        $kategori = Kategori::all();
+        return view('shopSidebar', compact('buku', 'kategori'));
+
     }
 
     /**
@@ -78,18 +82,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->name = $request->nama;
-        $user->email = $request->email;
-
-        if ($user->image && file_exists(storage_path('app/public' . $user->image))) {
-            Storage::delete('public/' . $user->image);
-        }
-        $image_name = $request->file('image')->store('image', 'public');
-        $user->image = $image_name;
-
-        $user->save();
-        return redirect('profile');
+        //
     }
 
     /**

@@ -29,11 +29,15 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
-				<!-- Cart -->
+		
 				<ul class="top-menu text-right list-inline">
 					<li class="dropdown cart-nav dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-android-cart"></i>Cart</a>
+						<a href="{{ url('check-out') }}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>
+								@if(!empty($notif))
+                                    <span class="badge badge-danger">{{ $notif }}</span>
+                                    @endif
+									</a>
 						<div class="dropdown-menu cart-dropdown">
 							<!-- Cart Item -->
 							<div class="media">
@@ -72,7 +76,7 @@
 							</div>
 							<ul class="text-center cart-buttons">
 								<li><a href="{{ url('/cart') }}" class="btn btn-small">View Cart</a></li>
-								<li><a href="{{ url('/checkout') }}" class="btn btn-small btn-solid-border">Checkout</a></li>
+								<li><a href="{{ url('check-out') }}" class="btn btn-small btn-solid-border">Checkout</a></li>
 							</ul>
 						</div>
 
@@ -84,7 +88,7 @@
 								class="tf-ion-ios-search-strong"></i> Search</a>
 						<ul class="dropdown-menu search-dropdown">
 							<li>
-								<form action="{{url('index')}}"><input name="search" type="search" class="form-control" placeholder="Search..."></form>
+								<form action="{{route('index')}}"><input name="search" type="search" class="form-control" placeholder="Search..."></form>
 							</li>
 						</ul>
 					</li><!-- / Search -->

@@ -86,4 +86,13 @@ class BukuController extends Controller
     {
         return view('profile');
     }
+
+    public function cetak_pdf()
+    {
+        $Checkout = pesananDetails::findOrFail($id);
+        $Checkout1 = Pesanan::findOrFail($id);
+        $pdf = PDF::loadview('pesan.checkout_pdf',compact('Checkout', 'Checkout1'));
+        return $pdf->stream();
+    }
+
 }

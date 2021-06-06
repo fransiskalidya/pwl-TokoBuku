@@ -101,14 +101,14 @@ FACEBOOK: https://www.facebook.com/themefisher
 			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
 								</li>
 								<li>
-									<a href="{{ url('/cart') }}"><i class="tf-ion-android-cart"></i></a>
+									<a href="{{ url('pesan') }}/{{ $Buku->id }}"><i class="tf-ion-android-cart"></i></a>
 								</li>
 							</ul>
                       	</div>
 					</div>
 					<div class="product-content">
 						<h4><a href="#">{{$Buku->nama_buku}}</a></h4>
-						<p class="price">{{$Buku->harga}}</p>
+						<p class="price">Rp {{ number_format($Buku->harga) }}</p>
 					</div>
 				</div>
 			</div>
@@ -135,7 +135,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 			        				<p class="product-short-description">
 			        					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto nihil cum. Illo laborum numquam rem aut officia dicta cumque.
 			        				</p>
-			        				<a href="cart.html" class="btn btn-main">Add To Cart</a>
+			        				<a href="{{('/cart')}}" class="btn btn-main">Add To Cart</a>
 			        				<a href="product-single.html" class="btn btn-transparent">View Product Details</a>
 			        			</div>
 			        		</div>

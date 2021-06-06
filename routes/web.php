@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\Buku1Controller;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PesanController;
 use App\Models\Buku;
+use App\Models\Pesanan;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,6 +29,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::resource('/', Buku1Controller::class);
+
 Route::get('/konfirm', function () {
     return view('purchase-confirmation');
 });
@@ -38,12 +43,12 @@ Route::get('/konfirm', function () {
 //Route::get('/login', [HomeController::class, 'login']);
 
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+//Route::get('/', 'App\Http\Controllers\HomeController@index');
 Route::get('/signin', [BukuController::class, 'signin']);
 
 
 Route::get('/cart', [BukuController::class, 'cart']);
-Route::get('/checkout', [BukuController::class, 'checkout']);
+Route::get('check-out', [PesanController::class, 'check_out']);
 Route::get('/home', [BukuController::class, 'shop']);
 
 // Route::get('/product-single/{id}', [HomeController::class, 'show']);
@@ -55,6 +60,14 @@ Route::get('/about', [BukuController::class, 'about']);
 Route::resource('profile', UserController::class);
 Route::get('/kategori/{id}', [HomeController::class, 'show']);
 
+Route::get('/pesan/{id}', [PesanController::class, 'index']);
+Route::post('/pesan/{id}', [PesanController::class, 'pesan']);
+Route::delete('/check-out/{id}', [PesanController::class, 'delete']);
+
+Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
+Route::get('', [PesanController::class, '']);
+
+Route::get('/checkout/cetak_pesanan/{id}', [BukuController::class, 'cetak_pdf'])->name('pesanan.pdf');
 
 
 // Route::resource('profile', UserController::class);
