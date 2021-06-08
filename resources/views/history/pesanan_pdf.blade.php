@@ -1,18 +1,7 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Erfolg Store | Book Store</title>
-  
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <title>Print Nota Pembelian</title>
+    <title>Print Nota Pemesanan</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
         crossorigin="anonymous">
@@ -25,20 +14,15 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
         crossorigin="anonymous"></script>
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+    </head>
     <body>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left mt-2">
                 <h2 align="center">ERFOLG BOOK STORE</h2>
-                <br>
-                <h1 align="center">NOTA PEMBELIAN</h1>
             </div>
             <br><br>
-
-        <div class="col-md-12">
+<div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <h3>Sukses Check Out</h3>
@@ -54,7 +38,6 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Gambar</th>
                                 <th>Nama Barang</th>
                                 <th>Jumlah</th>
                                 <th>Harga</th>
@@ -67,9 +50,6 @@
                             @foreach($pesanan_details as $pesanan_detail)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>
-                                    <img src="{{ url('Novel') }}/{{ $pesanan_detail->buku->image }}" width="100" alt="...">
-                                </td>
                                 <td>{{ $pesanan_detail->buku->nama_buku}}</td>
                                 <td>{{ $pesanan_detail->jumlah }} buku</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->buku->harga) }}</td>
@@ -79,12 +59,12 @@
                             @endforeach
 
                             <tr>
-                                <td colspan="5" align="right"><strong>Total Harga :</strong></td>
+                                <td colspan="4" align="right"><strong>Total Harga :</strong></td>
                                 <td align="right"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
                                 
                             </tr>
                              <tr>
-                                <td colspan="5" align="right"><strong>Total yang harus ditransfer :</strong></td>
+                                <td colspan="4" align="right"><strong>Total yang harus ditransfer :</strong></td>
                                 <td align="right"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
                                
                             </tr>
@@ -96,4 +76,3 @@
                 </div>     
             </div>
         </div>
-  
