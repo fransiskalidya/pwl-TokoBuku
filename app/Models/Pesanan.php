@@ -11,11 +11,11 @@ class Pesanan extends Model
     protected $table = 'pesanan';
     
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\Models\User','id_user', 'id');
     }
 
     public function pesananDetail() {
-        return $this->hasMany(pesananDetail::class);
+        return $this->hasMany('App\Models\PesananDetail','id_pesanan', 'id');
     }
 }
 

@@ -57,7 +57,7 @@
                                 <td colspan="5" align="right"><strong>Total Harga :</strong></td>
                                 <td align="center"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
                                 <td align="center">
-                                    <a href="{{ url('konfirmasi-check-out') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
+                                    <a href="{{ url('checkout_pdf') }}" class="btn btn-success" onclick="return confirm('Anda yakin akan Check Out ?');">
                                         <i class="tf-ion-android-cart"></i> Check Out
                                     </a>
                                 </td>

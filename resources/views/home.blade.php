@@ -60,12 +60,12 @@ FACEBOOK: https://www.facebook.com/themefisher
 <section class="products section">
 	<div class="container">
 		<div class="row">
-            @foreach ($buku as $buku )
-            <div class="col-md-4">
+		@foreach($buku as $Buku)
+			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
 						<span class="bage">Sale</span>
-						<img class="img-responsive" style="width: 520px; height: 430px" src="{{url('Novel')}}/{{$buku->image}}" alt="product-img" />
+						<img class="img-responsive" src="{{url('Novel')}}/{{$Buku->image}}" style="width: 520px; height: 430px" alt="product-img" />
 						<div class="preview-meta">
 							<ul>
 								<li>
@@ -77,18 +77,18 @@ FACEBOOK: https://www.facebook.com/themefisher
 			                        <a href="#!" ><i class="tf-ion-ios-heart"></i></a>
 								</li>
 								<li>
-									<a href="#!"><i class="tf-ion-android-cart"></i></a>
+									<a href="{{ url('pesan') }}/{{ $Buku->id }}"><i class="tf-ion-android-cart"></i></a>
 								</li>
 							</ul>
                       	</div>
 					</div>
 					<div class="product-content">
-						<h4><a href="product-single.html">{{$buku->nama_buku}}</a></h4>
-						<p class="price">{{$buku->harga}}</p>
+						<h4><a href="#">{{$Buku->nama_buku}}</a></h4>
+						<p class="price">Rp {{ number_format($Buku->harga) }}</p>
 					</div>
 				</div>
 			</div>
-            @endforeach
+			@endforeach
 
 
 

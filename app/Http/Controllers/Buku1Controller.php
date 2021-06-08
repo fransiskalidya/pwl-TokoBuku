@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 use App\Models\Kategori;
+use App\Models\pesananDetail;
+use PDF;
 class Buku1Controller extends Controller
 {
     /**
@@ -95,4 +97,5 @@ class Buku1Controller extends Controller
     {
         //
     }
+
 }

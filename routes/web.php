@@ -6,8 +6,10 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\Buku1Controller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PesanController;
+use App\Http\Controllers\HistoryController;
 use App\Models\Buku;
 use App\Models\Pesanan;
+use App\Models\pesananDetails;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -65,11 +67,14 @@ Route::post('/pesan/{id}', [PesanController::class, 'pesan']);
 Route::delete('/check-out/{id}', [PesanController::class, 'delete']);
 
 Route::get('konfirmasi-check-out', [PesanController::class, 'konfirmasi']);
-Route::get('', [PesanController::class, '']);
+Route::get('checkout_pdf', [PesanController::class, 'konfirmasi']);
 
-Route::get('/checkout/cetak_pesanan/{id}', [BukuController::class, 'cetak_pdf'])->name('pesanan.pdf');
+Route::get('/history/cetak_pdf/{id}', [HistoryController::class, 'cetak_pdf'])->name('pesanan.pdf');
 
+//Route::get('buku/pesanan/{id}', [PesanController::class, 'pesan'])->name('pesan.checkout_pdf');
 
+Route::get('history', [HistoryController::class, 'index']);
+Route::get('history/{id}', [HistoryController::class, 'detail']);
 // Route::resource('profile', UserController::class);
 
 Auth::routes();

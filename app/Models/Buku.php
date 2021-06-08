@@ -15,6 +15,6 @@ class Buku extends Model
     }
 
     public function pesananDetail() {
-        return $this->hasMany(pesananDetail::class);
+        return $this->hasMany('App\Models\PesananDetail','id_buku', 'id');
     }
 }

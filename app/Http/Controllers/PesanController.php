@@ -107,16 +107,10 @@ class PesanController extends Controller
     {
         $user = User::where('id', Auth::user()->id)->first();
 
-        if(empty($user->alamat))
+        if(empty($user->image))
         {
             //Alert::error('Identitas Harap dilengkapi', 'Error');
-            return redirect('/checkout/cetak_pesanan/{id}');
-        }
-
-        if(empty($user->nohp))
-        {
-            //Alert::error('Identitas Harap dilengkapi', 'Error');
-            return redirect('/checkout/cetak_pesanan/{id}');
+            return redirect('/profile');
         }
 
         $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status',0)->first();
@@ -132,7 +126,7 @@ class PesanController extends Controller
         }
 
         Alert::success('Pesanan Sukses Check Out Silahkan Lanjutkan Proses Pembayaran', 'Success');
-        return redirect('history/'.$id_pesanan);
+        return redirect('history/'.$pesanan_id);
 
     }
 }

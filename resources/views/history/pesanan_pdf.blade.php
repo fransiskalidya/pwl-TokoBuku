@@ -1,12 +1,48 @@
-@extends('layouts.app')
-@section('content')
-<div class="container">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Erfolg Store | Book Store</title>
+  
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <title>Print Nota Pembelian</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery3.4.1.slim.min.js" 
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+        crossorigin="anonymous"></script>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+    <body>
     <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left mt-2">
+                <h2 align="center">ERFOLG BOOK STORE</h2>
+                <br>
+                <h1 align="center">NOTA PEMBELIAN</h1>
+            </div>
+            <br><br>
+
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <h3>Sukses Check Out</h3>
-                    <h5>Pesanan anda sudah sukses dicheck out selanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank BRI Nomer Rekening : 32113-821312-123</strong> dengan nominal : <strong>Rp. {{ number_format($pesanan->kode+$pesanan->total) }}</strong></h5>
+                    <h5>Pesanan anda sudah sukses dicheck out selanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank BRI Nomer Rekening : 32113-821312-123</strong> dengan nominal : <strong>Rp. {{ number_format($pesanan->total) }}</strong></h5>
                 </div>
             </div>
             <div class="card mt-2">
@@ -34,7 +70,7 @@
                                 <td>
                                     <img src="{{ url('Novel') }}/{{ $pesanan_detail->buku->image }}" width="100" alt="...">
                                 </td>
-                                <td>{{ $pesanan_detail->barang->nama_buku }}</td>
+                                <td>{{ $pesanan_detail->buku->nama_buku}}</td>
                                 <td>{{ $pesanan_detail->jumlah }} buku</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->buku->harga) }}</td>
                                 <td align="right">Rp. {{ number_format($pesanan_detail->subtotal) }}</td>
@@ -49,24 +85,15 @@
                             </tr>
                              <tr>
                                 <td colspan="5" align="right"><strong>Total yang harus ditransfer :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($pesanan->total }}</strong></td>                                
+                                <td align="right"><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>
+                               
                             </tr>
                         </tbody>
                     </table>
-                    </table>
-                    <div class="float-right my-2">
-                        <a class="btn btn-success mt-3" href="{{ route('pesan.index') }}">Kembali</a>
+                    @endif                  
+                        </div>
                     </div>
-                    <div class="float-left my-2 text-center">
-                        <a class="btn btn-danger mt-3" href="{{ route('pesanan.pdf', $pesanan_detail->id) }}">Cetak ke PDF</a>
-                    </div>
-                </div>
-            </div>
-                    @endif
-                </div>
+                </div>     
             </div>
         </div>
-        
-    </div>
-</div>
-@endsection
+  

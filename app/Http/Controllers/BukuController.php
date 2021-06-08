@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Models\Buku;
+use App\Models\pesananDetail;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -86,13 +88,4 @@ class BukuController extends Controller
     {
         return view('profile');
     }
-
-    public function cetak_pdf()
-    {
-        $Checkout = pesananDetails::findOrFail($id);
-        $Checkout1 = Pesanan::findOrFail($id);
-        $pdf = PDF::loadview('pesan.checkout_pdf',compact('Checkout', 'Checkout1'));
-        return $pdf->stream();
-    }
-
 }
