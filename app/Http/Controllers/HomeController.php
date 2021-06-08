@@ -24,7 +24,7 @@ class HomeController extends Controller
     {
         // $buku = Buku::where('id_kategori', 1)->get();
         if ($request->has('search')) {
-            $buku = Buku::where("nama_buku", "LIKE", "%".$request->search."%");
+            $buku = Buku::where("nama_buku", "LIKE", "%" . $request->search . "%");
             $kategori = Kategori::all();
         } else {
             $buku = Buku::paginate(12);
@@ -37,7 +37,7 @@ class HomeController extends Controller
         // berdasarkan kategori
         $buku = DB::table('buku')->where('id_kategori', $id)->get();
         $kategori = Kategori::all();
-        return view('shopSidebar', compact('buku', 'kategori'));
+        return view('kategori', compact('buku', 'kategori'));
 
         // $buku = Buku::find($id);
         // return view('productSingle', compact('buku'));

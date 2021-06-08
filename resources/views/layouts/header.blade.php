@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-12 col-sm-4">
-		
+
 				<ul class="top-menu text-right list-inline">
 					<li class="dropdown cart-nav dropdown-slide">
 						<a href="{{ url('check-out') }}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
@@ -139,9 +139,12 @@
 						<a href="{{ url('/') }}">Home</a>
 					</li><!-- / Home -->
 
+                    <li class="dropdown ">
+						<a href="{{ url('/home') }}">Shop</a>
+					</li><!-- / Home -->
 
 					<!-- Elements -->
-					<li class="dropdown dropdown-slide">
+					{{-- <li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
 							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
 								class="tf-ion-ios-arrow-down"></span></a>
@@ -170,7 +173,7 @@
 
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
-					</li><!-- / Elements -->
+					</li><!-- / Elements --> --}}
 
 
 					<!-- Pages -->
