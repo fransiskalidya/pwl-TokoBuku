@@ -99,7 +99,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                 </div>
             </div>
             <div class="text">
-              <button type="submit" class="btn btn-main text-center" >{{ __('Login') }}</button>
+              <button type="submit" name="submit" class="btn btn-main text-center" >{{ __('Login') }}</button>
             </div>
           </form>
           <p class="mt-20">New in this site ?<a href="{{route('register') }}"> Create New Account</a></p>
